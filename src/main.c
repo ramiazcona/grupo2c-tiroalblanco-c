@@ -1,9 +1,11 @@
+#include "raylib.h"
+#include "resource_dir.h"
+#include "tiroalblanco.h"
 
-
-
-
-
-
+int main()
+{
+	return 0;
+}
 
 
 
