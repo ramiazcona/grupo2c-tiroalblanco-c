@@ -42,12 +42,62 @@
       "-std=c++20",
       "-c",
       "-o",
+      "obj/x64/Debug/tiro_al_blanco/tiroalblanco.o",
+      "src/tiroalblanco.h"
+    ],
+    "directory": "C:/Users/Ramiro/OneDrive/Facultad/Paradigmas_de_Programacion_I/Projecto/tiro_al_blanco/",
+    "file": "C:/Users/Ramiro/OneDrive/Facultad/Paradigmas_de_Programacion_I/Projecto/tiro_al_blanco/src/tiroalblanco.h",
+    "output": "C:/Users/Ramiro/OneDrive/Facultad/Paradigmas_de_Programacion_I/Projecto/tiro_al_blanco/obj/x64/Debug/tiro_al_blanco/tiroalblanco.o"
+  },
+  {
+    "arguments": [
+      "g++",
+      "-MD",
+      "-MP",
+      "-DDEBUG",
+      "-DPLATFORM_DESKTOP",
+      "-DGRAPHICS_API_OPENGL_33",
+      "-D_WIN32",
+      "-Isrc",
+      "-Iinclude",
+      "-Ibuild/external/raylib-master/src",
+      "-m64",
+      "-Wshadow",
+      "-g",
+      "-std=c++20",
+      "-c",
+      "-o",
       "obj/x64/Debug/tiro_al_blanco/main.o",
       "src/main.c"
     ],
     "directory": "C:/Users/Ramiro/OneDrive/Facultad/Paradigmas_de_Programacion_I/Projecto/tiro_al_blanco/",
     "file": "C:/Users/Ramiro/OneDrive/Facultad/Paradigmas_de_Programacion_I/Projecto/tiro_al_blanco/src/main.c",
     "output": "C:/Users/Ramiro/OneDrive/Facultad/Paradigmas_de_Programacion_I/Projecto/tiro_al_blanco/obj/x64/Debug/tiro_al_blanco/main.o"
+  },
+  {
+    "arguments": [
+      "g++",
+      "-MD",
+      "-MP",
+      "-DDEBUG",
+      "-DPLATFORM_DESKTOP",
+      "-DGRAPHICS_API_OPENGL_33",
+      "-D_WIN32",
+      "-Isrc",
+      "-Iinclude",
+      "-Ibuild/external/raylib-master/src",
+      "-m64",
+      "-Wshadow",
+      "-g",
+      "-std=c++20",
+      "-c",
+      "-o",
+      "obj/x64/Debug/tiro_al_blanco/tiroalblanco.o",
+      "src/tiroalblanco.c"
+    ],
+    "directory": "C:/Users/Ramiro/OneDrive/Facultad/Paradigmas_de_Programacion_I/Projecto/tiro_al_blanco/",
+    "file": "C:/Users/Ramiro/OneDrive/Facultad/Paradigmas_de_Programacion_I/Projecto/tiro_al_blanco/src/tiroalblanco.c",
+    "output": "C:/Users/Ramiro/OneDrive/Facultad/Paradigmas_de_Programacion_I/Projecto/tiro_al_blanco/obj/x64/Debug/tiro_al_blanco/tiroalblanco.o"
   },
   {
     "arguments": [

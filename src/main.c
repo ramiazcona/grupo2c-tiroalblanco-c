@@ -2,8 +2,25 @@
 #include "resource_dir.h"
 #include "tiroalblanco.h"
 
-int main()
+int main(void)
 {
+
+	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Tiro al Blanco");
+
+	SetTargetFPS(60);
+
+	while(!WindowShouldClose())
+	{
+		BeginDrawing();
+
+			ClearBackground(RAYWHITE);
+			
+		EndDrawing();
+	}
+
+
+	CloseWindow();
+
 	return 0;
 }
 
