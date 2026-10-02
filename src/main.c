@@ -5,15 +5,81 @@
 int main(void)
 {
 
-	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Tiro al Blanco");
+	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Tiro al Blanco"); // Configuración inicial de la ventana
+
+	GameScreen ventana_actual = MENU;
+
+	Rectangle boton_inicio = {SCREEN_WIDTH/2.0f - 150, 250, 300, 50};
+	Rectangle boton_puntajes = {SCREEN_WIDTH/2.0f - 150, 330, 300, 50};
 
 	SetTargetFPS(60);
 
 	while(!WindowShouldClose())
 	{
-		BeginDrawing();
 
-			ClearBackground(RAYWHITE);
+		Vector2 pos_mouse = GetMousePosition();
+
+		switch(ventana_actual) //Logica
+		{
+			case MENU:
+				if(CheckCollisionPointRec(pos_mouse, boton_inicio))
+				{
+					if(IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+					{
+						ventana_actual = PARTIDA;
+					}
+				}
+
+				if(CheckCollisionPointRec(pos_mouse, boton_puntajes))
+				{
+					if(IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+					{
+						ventana_actual = PUNTAJES;
+					}
+				}
+
+			case PARTIDA:
+			case PUNTAJES:
+				if(IsKeyPressed(KEY_ENTER))
+				{
+					ventana_actual = MENU;
+				}
+				break;
+		}
+
+
+		BeginDrawing();
+		ClearBackground(RAYWHITE);
+
+		switch(ventana_actual) //Dibujo en pantalla
+		{
+			case MENU:
+				//Titulo centrado
+				DrawText("TIRO AL BLANCO", SCREEN_WIDTH/2 - MeasureText("TIRO AL BLANCO", 60) / 2, 100, 60, DARKGRAY);
+
+				//Boton iniciar partida
+				DrawRectangleLinesEx(boton_inicio, 2, DARKGRAY);
+				DrawText("Iniciar Partida", boton_inicio.x + 40, boton_inicio.y + 15, 20, BLACK);
+
+				//Boton puntajes
+				DrawRectangleLinesEx(boton_puntajes, 2, DARKGRAY);
+				DrawText("Tabla de puntajes", boton_puntajes.x + 25, boton_puntajes.y + 15, 20, BLACK);
+
+				break;
+
+			case PARTIDA:
+				DrawText("PANTALLA DE JUEGO", 20, 20, 40, RED);
+                //Aca va la logica del juego
+                DrawText("Presiona ENTER para volver al menú", 20, 550, 20, GRAY);
+				break;
+
+			case PUNTAJES:
+				DrawText("TABLA DE PUNTUACIONES", 20, 20, 40, BLUE);
+                //Aca va el manejo de puntajes y archivos
+                DrawText("Presiona ENTER para volver al menú", 20, 550, 20, GRAY);
+				break;
+
+		}
 			
 		EndDrawing();
 	}

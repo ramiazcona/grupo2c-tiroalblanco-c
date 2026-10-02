@@ -4,4 +4,11 @@
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 600
 
+typedef enum
+{ 
+    MENU = 0,
+    PARTIDA, 
+    PUNTAJES 
+} GameScreen;
+
 #endif
